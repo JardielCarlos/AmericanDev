@@ -1,0 +1,110 @@
+{
+  "Clients": [
+    {
+      "nome": "Jardiel",
+      "Email": "jardiel.carlosm@hotmail.com",
+      "Nascimento": "09/01/2004",
+      "CEP": "58200-000",
+      "id": 0
+    },
+    {
+      "nome": "João da Silva",
+      "Email": "joaodasilva@gmail.com",
+      "Nascimento": "21/10/2000",
+      "CEP": "258963-023",
+      "id": 1
+    },
+    {
+      "nome": "Lucas",
+      "Email": "lucas@gmail.com",
+      "Nascimento": "05/05/1998",
+      "CEP": "25897-000",
+      "id": 2
+    },
+    {
+      "nome": "Rodrigo",
+      "Email": "rodrigo@gmail.com",
+      "Nascimento": "14/08/2003",
+      "CEP": "58200-000",
+      "id": 3
+    },
+    {
+      "nome": "tiago",
+      "Email": "tiago@gmail.com",
+      "Nascimento": "12/01/2000",
+      "CEP": "069875-236",
+      "id": 4
+    },
+    {
+      "nome": "Pedro",
+      "Email": "pedro@gmail.com",
+      "Nascimento": "10/12/1987",
+      "CEP": "56987-028",
+      "id": 5
+    },
+    {
+      "nome": "jorge",
+      "Email": "jorge@gmail.com",
+      "Nascimento": "12/01/1987",
+      "CEP": "13795-230",
+      "id": 6
+    },
+    {
+      "nome": "Luiz",
+      "Email": "luiz@gmail.com",
+      "Nascimento": "10/09/2000",
+      "CEP": "58236-032",
+      "id": 7
+    },
+    {
+      "nome": "Diego",
+      "Email": "diego@gmail.com",
+      "Nascimento": "10/11/1996",
+      "CEP": "58203-803",
+      "id": 8
+    },
+    {
+      "nome": "Emanuel",
+      "Email": "emanuel@gmail.com",
+      "Nascimento": "2000-10-12",
+      "CEP": "46875-023",
+      "id": 9
+    }
+  ],
+  "produtos": [
+    {
+      "nome": "Samsung Galaxy S22",
+      "preco": 5000,
+      "id": 0
+    },
+    {
+      "nome": "Televisão 60 polegadas LG",
+      "preco": 4500,
+      "id": 1
+    }
+  ],
+  "fornecedores": [
+    {
+      "nome": "Amazon",
+      "localidade": "São Paulo",
+      "id": 0
+    },
+    {
+      "nome": "Americanas",
+      "localidade": "Rio de Janeiro",
+      "id": 1
+    }
+  ],
+  "entregadores": [
+    {
+      "nome": "Luiz",
+      "veiculo": "Honda cg 160",
+      "id": 0
+    },
+    {
+      "nome": "Pedro",
+      "veiculo": "Fiat Strada 2010",
+      "id": 1
+    }
+  ]
+}

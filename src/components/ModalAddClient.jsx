@@ -12,15 +12,14 @@ export function ModalAddClient({clients, setClients}){
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [modalNome, setModalNome] = useState("")
-  const [modalEmail, setModalEmail] = useState("")
-  const [modalNasc, setModalNasc] = useState("")
-  const [modalCep, setModalCep] = useState("")
+  const [newClient, setNewClient] = useState({});
 
-  const handleChangeModalNome = (e) => setModalNome(e.target.value);
-  const handleChangeModalEmail = (e) => setModalEmail(e.target.value);
-  const handleChangeModalNasc = (e) => setModalNasc(e.target.value);
-  const handleChangeModalCep = (e) => setModalCep(e.target.value);
+  const handleChangeCadastro = (e) => {
+    let nome = e.target.name
+    let valor = e.target.value
+
+    setNewClient((valores) => ({...valores, [nome]: valor}))
+  }
 
   const [validated, setValidated] = useState(false);
 
@@ -37,7 +36,7 @@ export function ModalAddClient({clients, setClients}){
         headers: {
           'Content-Type': 'application/json'
       },
-        body: JSON.stringify(NewClient)
+        body: JSON.stringify(newClient)
       })
       .then((resp) => resp.json())
       .then((data) => setClients([...clients, data]))
@@ -50,17 +49,7 @@ export function ModalAddClient({clients, setClients}){
   };
 
   const handleClear = () =>{
-    setModalNome("")
-    setModalEmail("")
-    setModalNasc("")
-    setModalCep("")
-  }
-
-  const NewClient = {
-    nome : modalNome,
-    Email: modalEmail,
-    Nascimento: modalNasc,
-    CEP: modalCep
+    setNewClient("");
   }
 
   return (
@@ -80,7 +69,7 @@ export function ModalAddClient({clients, setClients}){
                 Nome
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder="Digite seu Nome" className='mx-2' onChange={handleChangeModalNome} value={modalNome} required />
+                <Form.Control type="text" placeholder="Digite seu Nome" className='mx-2' onChange={handleChangeCadastro} value={newClient.nome} name="nome" required />
               </Col>
             </Form.Group>
 
@@ -89,7 +78,7 @@ export function ModalAddClient({clients, setClients}){
                 Email
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="email" placeholder="Digite seu Email" className='mx-2' onChange={handleChangeModalEmail} value={modalEmail} required />
+                <Form.Control type="email" placeholder="Digite seu Email" className='mx-2' onChange={handleChangeCadastro} value={newClient.Email} name="Email" required />
               </Col>
             </Form.Group>
             <Form.Group as={Row} className="mb-3" controlId="validationCustomUsername">
@@ -97,7 +86,7 @@ export function ModalAddClient({clients, setClients}){
                 Nascimento
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="date" placeholder="Digite sua data de nascimento" className='mx-2' onChange={handleChangeModalNasc} value={modalNasc} required/>
+                <Form.Control type="date" placeholder="Digite sua data de nascimento" className='mx-2' onChange={handleChangeCadastro} value={newClient.Nascimento} name="Nascimento" required/>
               </Col>
             </Form.Group>
             <Form.Group as={Row} className="mb-3" controlId="validationCustom03">
@@ -105,11 +94,11 @@ export function ModalAddClient({clients, setClients}){
                 CEP
               </Form.Label>
               <Col sm="10">
-                <Form.Control type="text" placeholder="Digite seu CEP" className='mx-2' onChange={handleChangeModalCep} value={modalCep} required />
+                <Form.Control type="text" placeholder="Digite seu CEP" className='mx-2' onChange={handleChangeCadastro} value={newClient.CEP} name="CEP" required />
               </Col>
             </Form.Group>
             <Modal.Footer>
-              <Button variant="danger" onClick={handleClear}>
+              <Button variant="danger" onClick={handleClear} type="reset">
                 Limpar
               </Button>
               <Button variant="primary" type="submit">
